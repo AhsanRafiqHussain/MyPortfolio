@@ -1474,3 +1474,52 @@ section,
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
+
+.features-item {
+  background: #f9f9f9; /* Light background for contrast */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.features-item:hover {
+  transform: translateY(-10px); /* Subtle hover effect */
+}
+/* CSS */
+.features-item {
+  background: #f9f9f9; /* Light background for contrast */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.features-item:hover {
+  transform: translateY(-10px); /* Subtle hover effect */
+}
+
+.features-item i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.features-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #18d26e; /* Match the main heading color */
+}
+
+.features-item p {
+  font-size: 1rem;
+  color: #555555;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header .subtitle {
+  margin-top: 10px;
+}
