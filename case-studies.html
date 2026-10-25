@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies — Ahsan Rafiq Hussain, Senior DBA &amp; Database Engineer</title>
+<meta name="description" content="Real database engineering case studies: schema design, benchmarks, and architecture decisions from Ahsan Rafiq Hussain's 10+ years across MySQL, PostgreSQL, and MongoDB.">
+<link rel="canonical" href="https://ahsanrafiqhussain.github.io/case-studies.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><circle cx=%228%22 cy=%228%22 r=%227%22 fill=%22%2312181F%22 stroke=%22%234FA88B%22 stroke-width=%221.4%22/></svg>">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-row">
+    <a href="index.html" class="nav-logo"><span class="dot"></span>ahsan.db</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="case-studies.html" class="active">Case Studies</a>
+      <a href="blog.html">Blog &amp; Notes</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding:64px 0 40px;">
+    <div class="wrap">
+      <div class="eyebrow">Proof of work, not adjectives</div>
+      <h1 style="font-size:clamp(28px,4vw,42px);">Case studies</h1>
+      <p class="lede">Every project here includes the decision I made, the alternative I rejected, and the numbers that proved it out. No anonymous testimonials, no invented stats — the benchmark scripts are linked so you can reproduce them yourself.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="card-grid">
+
+        <a class="card" href="case-study-100m-rows.html">
+          <span class="tag">PostgreSQL · Schema Design · Sep 2025</span>
+          <h3>The 100M Row Table Is Not Your Problem. Your Schema Is.</h3>
+          <p>Two identical 5M-row order tables on Postgres 15, one design decision apart: row width and partition-by-lifecycle. The benchmark made the argument without an opinion in it.</p>
+          <div class="metric-row">
+            <div class="metric"><b>9×</b><span>faster range query</span></div>
+            <div class="metric"><b>43%</b><span>less storage</span></div>
+            <div class="metric"><b>Instant</b><span>vs. 35.7s delete</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="case-study-mongodb-timeseries.html">
+          <span class="tag">MongoDB · IoT Time-Series · 6-month iteration</span>
+          <h3>Schema Design for Time-Series Data in MongoDB</h3>
+          <p>A deeply nested per-second schema looked clever on paper. Six months of production changes said otherwise. Here's the redesign, and the numbers behind it.</p>
+          <div class="metric-row">
+            <div class="metric"><b>6.3×</b><span>smaller documents</span></div>
+            <div class="metric"><b>13×</b><span>faster document creation</span></div>
+            <div class="metric"><b>6.9×</b><span>faster reads</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="wrap">
+      <div class="section-head"><h2>Notable projects</h2></div>
+      <p style="max-width:640px; margin-bottom:28px;">Shorter engagements, still worth showing — pulled straight from the work history, no embellishment beyond what actually shipped.</p>
+      <div class="card-grid">
+        <div class="card">
+          <span class="tag">PostgreSQL · Citus · E-Commerce · Conure IT Services</span>
+          <h3>Distributed sharding for a high-traffic storefront</h3>
+          <p>Implemented a Citus Data distributed-Postgres sharding layer for an e-commerce application. Cut server hardware utilization by 40% while concurrent web traffic grew from roughly 50 to 300 users.</p>
+        </div>
+        <div class="card">
+          <span class="tag">MySQL · MongoDB · Telecom IoT · Conure Telecom Services</span>
+          <h3>4TB big-data cluster + hybrid transactional/IoT store</h3>
+          <p>Designed and led deployment of a 4TB MySQL cluster for a telecom big-data application — 40% query performance improvement through schema and query redesign. Built a companion hybrid MySQL/MongoDB architecture so real-time sensor data and transactional records could coexist without forcing one model on both.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Financial Services · Disaster Recovery · Al Rajhi Takaful</span>
+          <h3>Failover, rebuilt: hours to minutes</h3>
+          <p>Engaged as a remote DBA to redesign backup and disaster-recovery strategy for a regulated banking client. Rebuilt the failover process from a multi-hour manual recovery to a minutes-long one, without compromising regulatory compliance.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Compliance · Audit Layer · Conure IT Services</span>
+          <h3>Database-level audit layer for compliance reporting</h3>
+          <p>Built a custom audit layer at the database level, ensuring data integrity was independently verifiable across applications and enabling on-demand compliance reports without relying on application-layer logging.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>
+      <div class="nav-logo"><span class="dot"></span>Ahsan Rafiq Hussain</div>
+      <div class="footer-note">Senior Database Administrator | Database Engineer | Architecture Focus<br>Karachi, Pakistan · Open to remote &amp; relocation</div>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:ahsanghanchi@hotmail.com">Email</a>
+      <a href="Ahsan_Rafiq_Hussain_Resume.pdf" download="Ahsan_Rafiq_Hussain_Resume.pdf">Resume (PDF)</a>
+      <a href="Ahsan_Rafiq_Hussain_Resume.docx" download="Ahsan_Rafiq_Hussain_Resume.docx">Editable Word copy</a>
+      <a href="https://www.linkedin.com/in/ahsan-ghanchi/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.upwork.com/freelancers/~01b57f5d05855ff9a9" target="_blank" rel="noopener">Upwork</a>
+      <a href="https://github.com/AhsanRafiqHussain" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="wrap footer-note">© <span id="year"></span> Ahsan Rafiq Hussain.</div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

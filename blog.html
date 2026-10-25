@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog &amp; Notes — Ahsan Rafiq Hussain, Senior DBA &amp; Database Engineer</title>
+<meta name="description" content="Field notes, essays, and ongoing learning from a database engineer working across MySQL, PostgreSQL, MongoDB, and cloud-native architecture.">
+<link rel="canonical" href="https://ahsanrafiqhussain.github.io/blog.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><circle cx=%228%22 cy=%228%22 r=%227%22 fill=%22%2312181F%22 stroke=%22%234FA88B%22 stroke-width=%221.4%22/></svg>">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-row">
+    <a href="index.html" class="nav-logo"><span class="dot"></span>ahsan.db</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="blog.html" class="active">Blog &amp; Notes</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding:64px 0 40px;">
+    <div class="wrap">
+      <div class="eyebrow">Written notes, published as I learn</div>
+      <h1 style="font-size:clamp(28px,4vw,42px);">Blog &amp; notes</h1>
+      <p class="lede">Long-form essays live on Medium. This page is the index — updated as new pieces publish, alongside shorter field notes as I work through the architecture-level gap between running databases and designing them.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="card-grid">
+
+        <a class="card" href="ai-assisted-dba-code-review.html">
+          <span class="tag">Article · DBA Practice · AI-Assisted Review</span>
+          <h3>A DBA in the Codebase: Using AI Without Letting It Drift</h3>
+          <p>A process-focused account of using AI with explicit boundaries, database expertise, human review, and testing during upgrade work.</p>
+        </a>
+
+        <a class="card" href="https://medium.com/@ahsanghanchi75/the-100m-row-table-is-not-your-problem-your-schema-is-3baff9119a03" target="_blank" rel="noopener">
+          <span class="tag">Essay · PostgreSQL · Schema Design</span>
+          <h3>The 100M Row Table Is Not Your Problem, Your Schema Is</h3>
+          <p>Why "how do you optimize a huge table" is the wrong interview question — and the benchmark that makes the real argument: row width and data lifecycle beat retrofitted indexing, every time.</p>
+        </a>
+
+        <a class="card" href="https://medium.com/@ahsanghanchi75/optimizing-time-series-data-storage-in-mongodb-a-journey-to-efficiency-f1ec9365de48" target="_blank" rel="noopener">
+          <span class="tag">Essay · MongoDB · IoT</span>
+          <h3>Optimizing Time-Series Data Storage in MongoDB: A Journey to Efficiency</h3>
+          <p>Six months running a deeply nested per-second schema in production, and the flatter, leaner redesign that replaced it — with the numbers that justified the rebuild.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="wrap">
+      <div class="section-head"><h2>Currently studying</h2></div>
+      <p style="max-width:640px;">The gap between running a database well and architecting one is mostly cross-platform breadth and cloud-native design. This is what's actively in progress — expect notes here as it solidifies into something worth publishing.</p>
+      <div class="pill-row" style="margin-top:18px;">
+        <span class="pill">SQL Server architecture &amp; Always On</span>
+        <span class="pill">Oracle Data Guard equivalents</span>
+        <span class="pill">AWS RDS / Aurora / RDS Proxy</span>
+        <span class="pill">Terraform &amp; Ansible for DB infra</span>
+        <span class="pill">Observability (Prometheus / Grafana)</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>
+      <div class="nav-logo"><span class="dot"></span>Ahsan Rafiq Hussain</div>
+      <div class="footer-note">Senior Database Administrator | Database Engineer | Architecture Focus<br>Karachi, Pakistan · Open to remote &amp; relocation</div>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:ahsanghanchi@hotmail.com">Email</a>
+      <a href="Ahsan_Rafiq_Hussain_Resume.pdf" download="Ahsan_Rafiq_Hussain_Resume.pdf">Resume (PDF)</a>
+      <a href="Ahsan_Rafiq_Hussain_Resume.docx" download="Ahsan_Rafiq_Hussain_Resume.docx">Editable Word copy</a>
+      <a href="https://www.linkedin.com/in/ahsan-ghanchi/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.upwork.com/freelancers/~01b57f5d05855ff9a9" target="_blank" rel="noopener">Upwork</a>
+      <a href="https://github.com/AhsanRafiqHussain" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="wrap footer-note">© <span id="year"></span> Ahsan Rafiq Hussain.</div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

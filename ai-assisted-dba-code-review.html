@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A DBA in the Codebase: Using AI Without Letting It Drift</title>
+<meta name="description" content="A process-focused reflection on how a DBA used AI with explicit guardrails, human review, and testing while working across the database and application-code boundary.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><circle cx=%228%22 cy=%228%22 r=%227%22 fill=%22%2312181F%22 stroke=%22%234FA88B%22 stroke-width=%221.4%22/></svg>">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-row">
+    <a href="index.html" class="nav-logo"><span class="dot"></span>ahsan.db</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="blog.html" class="active">Blog &amp; Notes</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="cs-hero">
+    <div class="wrap">
+      <a href="blog.html" class="back-link">← All notes</a>
+      <div class="eyebrow">DBA practice · AI-assisted code review · MySQL upgrades</div>
+      <h1 style="font-size:clamp(28px,4vw,42px); max-width:820px;">A DBA in the Codebase: Using AI Without Letting It Drift</h1>
+      <p class="lede" style="max-width:720px;">A process-focused reflection on crossing the database/application boundary with AI as an assistant, while keeping scope, judgment, and release responsibility human-led.</p>
+    </div>
+  </section>
+
+  <section>
+    <article class="wrap prose">
+      <p>A database upgrade is rarely only a database change. Compatibility assumptions can be spread across application code, connection layers, ORM mappings, queries, configuration, and schema. At some point, doing the database work well meant looking beyond the server and into the codebase.</p>
+
+      <p>That is not always a comfortable boundary. Database specialists are often expected to advise from one side while application developers own the other. In this project, I needed to work across that boundary: use my DBA experience to identify upgrade risks, make carefully scoped code changes, test them in the context of the application, and prepare understandable changes for review.</p>
+
+      <h2>AI made exploration faster. It did not make the work automatic.</h2>
+      <p>My experience was that AI could be an exceptionally capable assistant. It helped me explore unfamiliar code and consider compatibility risks. But an open-ended instruction could also lead it beyond the task: proposing unrelated fixes, making changes that were not needed for the upgrade, or treating an unverified assumption as if it were established fact.</p>
+
+      <p>The lesson was not to avoid AI. It was to define how it could help before asking it to act.</p>
+
+      <h2>Start with a working agreement</h2>
+      <p>I established explicit rules for the work: what the upgrade covered, which actions were prohibited, and what required my review and permission. For example, AI could not delete code or make structural changes on its own. Changes had to be documented, understandable to a human reviewer, and consistent with the project's existing coding practices.</p>
+
+      <p>That agreement turned the prompt from a vague request to “fix the application” into a bounded assignment. It also gave me a way to say no when a suggestion, even a technically plausible one, was outside the agreed scope.</p>
+
+      <h2>Map the database touchpoints before changing code</h2>
+      <p>I began with discovery rather than edits. The first pass was to map where the application interacted with the database: query execution, data-access and ORM layers, connection and driver code, plus configuration and schema assumptions.</p>
+
+      <p>From there, I reviewed potential compatibility changes through a DBA's lens. A type conversion is not just a compile-time change if it can truncate data. A numeric-type change may affect precision or downstream reports. A query or driver adjustment needs to preserve the application's behavior, not simply satisfy a new compatibility check.</p>
+
+      <p>AI helped me explore and organize candidates. I still checked each finding against the actual code and the defined upgrade scope before deciding whether it belonged in the change set.</p>
+
+      <h2>Keep scope creep visible</h2>
+      <p>Code review can uncover real issues that are not part of the current upgrade. AI can surface those too. Finding a legitimate issue does not automatically make it safe to fold into a migration: combining unrelated work makes the change harder to review, test, and roll back.</p>
+
+      <p>I treated out-of-scope findings as separate follow-up items rather than quietly expanding the upgrade. That kept the work focused and made it easier for the right people to decide what to do next.</p>
+
+      <h2>Testing and review remain human responsibilities</h2>
+      <p>AI can help suggest test cases and rollout questions, but it cannot decide what evidence is sufficient for a release. I reviewed the changes, checked that they followed the application's conventions, and used build and application-level testing to evaluate behavior. When a failure appeared, I investigated whether it was caused by the upgrade or already existed in the environment, rather than assuming either answer.</p>
+
+      <p>Each change needed a clear reason and a record. The final merge should be reviewable by another person, and the rollout plan should account for verification and recovery—not just the code edit.</p>
+
+      <h2>What I took away</h2>
+      <p>This work did not turn a DBA into an autonomous application engineer, and it did not turn AI into the owner of a production change. It showed me that a database specialist can contribute more effectively when they follow the application's data path into the codebase and collaborate across traditional role boundaries.</p>
+
+      <p>AI expanded how quickly I could explore that unfamiliar territory. Scope rules, DBA judgment, testing, and human review kept the exploration useful. The strongest result was not “AI changed the code.” It was a controlled process in which the changes remained understandable, testable, and accountable.</p>
+
+      <p>If you work in infrastructure or databases and have hesitated to share how you learn across domains, I think that process is worth talking about. The tools matter; so do the boundaries we set around them.</p>
+
+      <div class="callout"><b>In short:</b> use AI to widen the investigation, not to widen the scope. Let expertise guide the changes, and let evidence—not confidence—guide the release.</div>
+
+      <p style="margin-top:32px;"><a href="blog.html" class="btn btn-secondary">Back to Blog &amp; Notes →</a></p>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>
+      <div class="nav-logo"><span class="dot"></span>Ahsan Rafiq Hussain</div>
+      <div class="footer-note">Senior Database Administrator | Database Engineer | Architecture Focus<br>Karachi, Pakistan · Open to remote &amp; relocation</div>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:ahsanghanchi@hotmail.com">Email</a>
+      <a href="Ahsan_Rafiq_Hussain_Resume.pdf" download="Ahsan_Rafiq_Hussain_Resume.pdf">Resume (PDF)</a>
+      <a href="Ahsan_Rafiq_Hussain_Resume.docx" download="Ahsan_Rafiq_Hussain_Resume.docx">Editable Word copy</a>
+      <a href="https://www.linkedin.com/in/ahsan-ghanchi/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.upwork.com/freelancers/~01b57f5d05855ff9a9" target="_blank" rel="noopener">Upwork</a>
+      <a href="https://github.com/AhsanRafiqHussain" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="wrap footer-note">© <span id="year"></span> Ahsan Rafiq Hussain.</div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
